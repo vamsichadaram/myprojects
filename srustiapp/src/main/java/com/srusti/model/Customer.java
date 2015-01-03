@@ -1,10 +1,21 @@
 package com.srusti.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Customer 
 {
+	@Id
+	@GeneratedValue
 	private String id;
+	@Column
 	private String name;
+	@Column
 	private String contact;
+	@Column
 	private String email;
 	
 	public String getId() {
