@@ -1,4 +1,4 @@
-package com.vamsi.model;
+package com.srusti.model;
 
 public class Customer 
 {
