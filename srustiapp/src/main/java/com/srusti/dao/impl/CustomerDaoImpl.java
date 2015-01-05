@@ -2,22 +2,26 @@ package com.srusti.dao.impl;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 
 import com.srusti.dao.CustomerDao;
 import com.srusti.model.Customer;
 
-public class CustomerDaoImpl implements CustomerDao 
+public class CustomerDaoImpl implements CustomerDao
 {
+	private static final Logger LOG= Logger.getLogger(CustomerDaoImpl.class);
 	private SessionFactory session;
 	
 	public void save(Customer customer) 
 	{
 		session.getCurrentSession().save(customer);
+		LOG.info("Customer saved into database successfully.....");
 	}
 
 	public Customer getCustomer(int id) 
 	{
+		LOG.info("Getting customer with the id= "+id);
 		return (Customer) session.getCurrentSession().get(Customer.class,id);
 	}
 
