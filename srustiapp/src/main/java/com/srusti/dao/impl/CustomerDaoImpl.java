@@ -6,34 +6,34 @@ import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 
 import com.srusti.dao.CustomerDao;
-import com.srusti.model.Customer;
+import com.srusti.model.CustomerModel;
 
 public class CustomerDaoImpl implements CustomerDao
 {
 	private static final Logger LOG= Logger.getLogger(CustomerDaoImpl.class);
 	private SessionFactory session;
 	
-	public void save(Customer customer) 
+	public void save(CustomerModel customer) 
 	{
 		session.getCurrentSession().save(customer);
 		LOG.info("Customer saved into database successfully.....");
 	}
 
-	public Customer getCustomer(int id) 
+	public CustomerModel getCustomer(int id) 
 	{
 		LOG.info("Getting customer with the id= "+id);
-		return (Customer) session.getCurrentSession().get(Customer.class,id);
+		return (CustomerModel) session.getCurrentSession().get(CustomerModel.class,id);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Customer> getCustomersList() 
+	public List<CustomerModel> getCustomersList() 
 	{
 		return session.getCurrentSession().createQuery("From Customer").list();
 	}
 
 	public void remove(int id) 
 	{
-		Customer customer=(Customer) session.getCurrentSession().get(Customer.class,id);
+		CustomerModel customer=(CustomerModel) session.getCurrentSession().get(CustomerModel.class,id);
 		session.getCurrentSession().delete(customer);
 	}
 

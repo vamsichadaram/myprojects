@@ -2,12 +2,12 @@ package com.srusti.dao;
 
 import java.util.List;
 
-import com.srusti.model.Customer;
+import com.srusti.model.CustomerModel;
 
 public interface CustomerDao 
 {
-	void save(Customer customer);
-	Customer getCustomer(final int id);
-	List<Customer> getCustomersList();
+	void save(CustomerModel customer);
+	CustomerModel getCustomer(final int id);
+	List<CustomerModel> getCustomersList();
 	void remove(final int id);
 }

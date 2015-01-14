@@ -2,13 +2,13 @@ package com.srusti.service;
 
 import java.util.List;
 
-import com.srusti.model.Customer;
+import com.srusti.model.CustomerModel;
 
 public interface CustomerService 
 {
-	void save(Customer customer);
-	void update(Customer customer);
-	Customer getCustomer(final int id);
-	List<Customer> getCustomersList();
+	void save(CustomerModel customer);
+	void update(CustomerModel customer);
+	CustomerModel getCustomer(final int id);
+	List<CustomerModel> getCustomersList();
 	void remove(final int id);
 }
