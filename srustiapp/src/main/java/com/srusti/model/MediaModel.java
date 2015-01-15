@@ -12,7 +12,7 @@ public class MediaModel
 {
 	@Id
 	@GeneratedValue
-	private String id;
+	private int id;
 	@Column
 	private String name;
 	@Column
@@ -23,10 +23,10 @@ public class MediaModel
 	private String alt;
 	@Column
 	private String decription;
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

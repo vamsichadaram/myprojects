@@ -4,13 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="customers")
 public class CustomerModel 
 {
 	@Id
 	@GeneratedValue
-	private String id;
+	private int id;
 	@Column
 	private String name;
 	@Column
@@ -18,10 +20,10 @@ public class CustomerModel
 	@Column
 	private String email;
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
