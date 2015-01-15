@@ -3,28 +3,28 @@ package com.srusti.service.impl;
 import java.util.List;
 
 import com.srusti.dao.CustomerDao;
-import com.srusti.model.Customer;
+import com.srusti.model.CustomerModel;
 import com.srusti.service.CustomerService;
 
 public class CustomerServiceImpl implements CustomerService 
 {
 	private CustomerDao dao;
-	public void save(Customer customer) 
+	public void save(CustomerModel customer) 
 	{
 		dao.save(customer);
 	}
 
-	public void update(Customer customer) 
+	public void update(CustomerModel customer) 
 	{
 		dao.save(customer);
 	}
 
-	public Customer getCustomer(int id) 
+	public CustomerModel getCustomer(int id) 
 	{
 		return dao.getCustomer(id);
 	}
 
-	public List<Customer> getCustomersList() 
+	public List<CustomerModel> getCustomersList() 
 	{
 		return dao.getCustomersList();
 	}
