@@ -106,7 +106,7 @@
             <version>${javax.servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
-
+		
         <!-- Hibernate and JPA -->
         <dependency>
             <groupId>org.hibernate.java-persistence</groupId>

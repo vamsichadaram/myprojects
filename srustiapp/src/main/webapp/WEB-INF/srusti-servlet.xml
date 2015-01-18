@@ -18,7 +18,7 @@
 
 <!-- Resource mapping like js,css,images files -->
     <mvc:annotation-driven/>
-    <mvc:resources mapping="/resources/**" location="resources/"/>
+    <mvc:resources mapping="/resources/**" location="resources/srusti/"/>
     <mvc:view-controller path="/home" view-name="home"/>
 
 <!-- To set view pages location  with prefix and suffix-->
@@ -51,7 +51,7 @@
         
         <property name="packagesToScan">
       	<list>
-        <value>com.vamsi.model</value>
+        <value>com.srusti</value>
       	</list>
     	</property>
         

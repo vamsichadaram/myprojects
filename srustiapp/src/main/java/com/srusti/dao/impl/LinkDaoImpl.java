@@ -6,11 +6,13 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.srusti.dao.LinkDao;
 import com.srusti.model.components.LinkComponent;
 
 @Repository("linkDao")
+@Transactional
 public class LinkDaoImpl implements LinkDao 
 {
 	@Autowired

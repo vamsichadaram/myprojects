@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -17,10 +18,15 @@ public class CMSLinkController
 	@Autowired
 	private LinkService service;
 	
-	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public void save(LinkComponent link)
+	@RequestMapping(value="/linkform")
+	public String linkform()
 	{
-		service.save(link);
+		return "forms/linkform";
+	}
+	@RequestMapping(value="/save", method=RequestMethod.POST)
+	public void save(@ModelAttribute("linkComponent")LinkComponent linkComponent)
+	{
+		service.save(linkComponent);
 	}
 	@RequestMapping("/get")
 	public LinkComponent get(int id)
