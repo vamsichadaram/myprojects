@@ -3,6 +3,7 @@ package com.srusti.model;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,12 +17,15 @@ public class EmailModel
 	@GeneratedValue
 	private int id;
 	@Column
+	@ElementCollection(targetClass=String.class)
 	private List<String> toAddress;
 	@Column
 	private String fromAddress;
 	@Column
+	@ElementCollection(targetClass=String.class)
 	private List<String> bcc;
 	@Column
+	@ElementCollection(targetClass=String.class)
 	private List<String> cc;
 	@Column
 	private String subject;

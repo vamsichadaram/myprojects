@@ -2,11 +2,13 @@ package com.srusti.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.srusti.model.components.LinkComponent;
 import com.srusti.service.LinkService;
@@ -15,13 +17,15 @@ import com.srusti.service.LinkService;
 @RequestMapping("/link")
 public class CMSLinkController 
 {
+	private static final Logger LOG= Logger.getLogger(CMSLinkController.class);
 	@Autowired
 	private LinkService service;
 	
-	@RequestMapping(value="/linkform")
-	public String linkform()
+	@RequestMapping(value="/form")
+	public ModelAndView linkform()
 	{
-		return "forms/linkform";
+		LOG.info("returning to form");
+		return new ModelAndView("linkform","linkComponent",new LinkComponent());
 	}
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public void save(@ModelAttribute("linkComponent")LinkComponent linkComponent)

@@ -12,6 +12,7 @@ public class MediaModel
 {
 	@Id
 	@GeneratedValue
+	@Column(name="mid")
 	private int id;
 	@Column
 	private String name;
