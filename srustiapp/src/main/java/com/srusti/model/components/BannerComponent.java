@@ -1,4 +1,4 @@
-package com.srusti.components;
+package com.srusti.model.components;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

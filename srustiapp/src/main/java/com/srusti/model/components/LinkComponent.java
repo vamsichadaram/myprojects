@@ -1,4 +1,4 @@
-package com.srusti.components;
+package com.srusti.model.components;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,8 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Paragraph")
-public class ParagraphComponent 
+@Table(name="links")
+public class LinkComponent 
 {
 	@Id
 	@GeneratedValue
@@ -17,6 +17,8 @@ public class ParagraphComponent
 	private String name;
 	@Column
 	private String description;
+	@Column
+	private String url;
 	public int getId() {
 		return id;
 	}
@@ -35,9 +37,15 @@ public class ParagraphComponent
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	@Override
 	public String toString() {
-		return "ParagraphComponent [id=" + id + ", name=" + name
-				+ ", description=" + description + "]";
+		return "LinkComponent [id=" + id + ", name=" + name + ", description="
+				+ description + ", url=" + url + "]";
 	}
 }
