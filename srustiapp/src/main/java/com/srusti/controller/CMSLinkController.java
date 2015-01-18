@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.srusti.model.components.LinkComponent;
@@ -20,7 +21,6 @@ public class CMSLinkController
 	private static final Logger LOG= Logger.getLogger(CMSLinkController.class);
 	@Autowired
 	private LinkService service;
-	
 	@RequestMapping(value="/form")
 	public ModelAndView linkform()
 	{
@@ -28,9 +28,15 @@ public class CMSLinkController
 		return new ModelAndView("linkform","linkComponent",new LinkComponent());
 	}
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public void save(@ModelAttribute("linkComponent")LinkComponent linkComponent)
+	@ResponseBody
+	public void save(@ModelAttribute LinkComponent linkComponent)
 	{
-		service.save(linkComponent);
+		LOG.info("saving "+linkComponent.toString());
+		if(linkComponent!=null)
+		{
+			LOG.info("saving customer");
+			service.save(linkComponent);
+		}
 	}
 	@RequestMapping("/get")
 	public LinkComponent get(int id)

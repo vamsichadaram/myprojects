@@ -19,6 +19,9 @@ public class LinkComponent
 	private String description;
 	@Column
 	private String url;
+	@Column
+	private int node;
+	
 	public int getId() {
 		return id;
 	}
