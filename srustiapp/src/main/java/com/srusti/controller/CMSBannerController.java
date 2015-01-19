@@ -23,9 +23,9 @@ public class CMSBannerController
 		service.save(banner);
 	}
 	@RequestMapping("/get")
-	public void get(int id)
+	public BannerComponent get(int id)
 	{
-		service.get(id);
+		return service.get(id);
 	}
 	@RequestMapping("/remove")
 	public void remove(int id)
