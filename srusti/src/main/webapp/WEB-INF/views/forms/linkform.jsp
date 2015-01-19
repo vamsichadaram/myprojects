@@ -1,5 +1,5 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
-<form:form action="/srustiapp/media/save" enctype="multipart/form-data" modelAttribute="mediaForm" method="POST">
+<form:form action="/srustiapp/link/save" modelAttribute="linkComponent" method="POST">
 	<table>
 		<tr>
 			<td>name</td>
@@ -10,16 +10,8 @@
 			<td><input type="text" name="description"></td>
 		</tr>
 		<tr>
-			<td>Alt</td>
-			<td><input type="text" name="alt"></td>
-		</tr>
-		<tr>
-			<td>Title</td>
-			<td><input type="text" name="title"></td>
-		</tr>
-		<tr>
-			<td>Image</td>
-			<td><input type="file" name="file"></td>
+			<td>url</td>
+			<td><input type="text" name="url"></td>
 		</tr>
 		<tr>
 			<td></td>
